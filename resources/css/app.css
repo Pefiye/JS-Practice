@@ -26,10 +26,11 @@ body {
 nav {
   color: #fff;
   align-items: center;
+  justify-content: space-between;
   display: flex;
   padding: 0 20px;
   outline: 2px solid #fff;
-  height: 10%;
+  height: 10%;  
 }
 
 main {
@@ -37,7 +38,7 @@ main {
   height: 90%;
 }
 
-form {
+.form-input {
   width: 25%;
   padding: 20px;
   display: flex;
@@ -47,7 +48,7 @@ form {
   height: 100%;
   border-right: 1px solid #fff;
 }
-form input {
+.form-input input {
   background-color: #1e1e1e;
   outline: 1px solid #fff;
   color: #fff;
@@ -118,5 +119,3 @@ form button:active {
 .right .food_tab button:active {
   scale: 0.95;
 }
-
-/*# sourceMappingURL=app.css.map */
