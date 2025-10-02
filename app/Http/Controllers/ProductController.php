@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+        $currentPage = $request->get('page', 1);
         $products = Product::all();
-        return view('product', compact('products'));
+        $totalPage = ceil($products->count() / 5);
+        $products = Product::limit(5)->offset(($currentPage - 1) * 5)->get();
+        return view('product', compact('products', 'currentPage', 'totalPage'));
     }
 
     

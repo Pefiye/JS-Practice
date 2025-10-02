@@ -33,6 +33,12 @@ nav {
   height: 10%;  
 }
 
+.wrapper-data{
+  width: 100%;
+  padding: 20px 10px 4px 10px;
+  color: white;
+}
+
 main {
   display: flex;
   height: 90%;
@@ -77,6 +83,12 @@ form button {
   transition: 0.1s;
   width: max-content;
 }
+
+.selected-number {
+  background-color: #fff;
+  color: #1e1e1e;
+}
+
 form button:hover {
   background-color: #fff;
   color: #1e1e1e;
@@ -86,12 +98,19 @@ form button:active {
 }
 
 .right {
-  width: 75%;
+  width: 100vw;
   padding: 20px;
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
 }
+
+.right .wrapper-product{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .right .food_tab {
   outline: 1px solid #fff;
   padding: 10px;
@@ -118,4 +137,23 @@ form button:active {
 }
 .right .food_tab button:active {
   scale: 0.95;
+}
+
+.wrapper-data .pagination{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.wrapper-data .pagination .numeration{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
 }

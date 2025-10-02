@@ -29,12 +29,7 @@
             <br>
             <button type="submit">Submit</button>
         </form>
-        <div class="right">
-
-        </div>
     </main>
-
-
 </body>
 
 </html>
