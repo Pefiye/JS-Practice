@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <nav>
+        <h1>Food API</h1>
+    </nav>
+    <main>
+    <form id="form_input">
+        <h1>Tambah Produk</h1>
+        <label>Name</label>
+        <input type="text">
+        <label>Stock</label>
+        <input type="text">
+        <label>Type</label>
+        <select name="" id="">
+            <option value="food">Food</option>
+            <option value="drink">Drink</option>
+        </select>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <div class="right">
+        
+    </div>
+    </main>
+</body>
+<script>
+const form = document.querySelector("#form_input");
+const list = document.querySelector(".right");
+
+fetch("/api")
+.then(res => res.json())
+.then (array => {
+    array.forEach(element => {
+        list.innerHTML +=
+        `
+            <a href="product.html?name=${element.name}" class="food_tab">
+                <h3>ID: ${element.id}</h3>
+                <h2>Nama: ${element.name}</h2>
+                <h3>Tipe: ${element.type}</h3>
+                <h3>Stok: ${element.stock}</h3>
+            </a>
+        `
+    });
+})
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    var nama = e.target[0].value
+    var stok = e.target[1].value
+    var tipe = e.target[2].value
+
+    fetch("/add", {method:"post", headers:{"Content-Type":"application/json"}, body:JSON.stringify({nama, stok, tipe})})
+    .then(res => res.json())
+    .then(data => {console.log("Server: ", data.message)})
+    
+    window.location.href = "/"
+})
+
+
+
+</script>
+</html>

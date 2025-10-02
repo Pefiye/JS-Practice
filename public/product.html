@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <nav>
+        <a href="/"><h1>Food API</h1></a>
+    </nav>
+    <main>
+    <div class="right">
+        <div class="food_tab">
+                <h3>ID: <label></label></h3>
+                <h2>Nama: <label></label></h2>
+                <h3>Tipe: <label></label></h3>
+                <h3>Stok: <label></label></h3>
+
+                <button id="editts">Edit</button>
+                <button id="deletets">Delete</button>
+        </div>
+    </div>
+    </main>
+</body>
+<script>
+const name = new URLSearchParams(window.location.search).get("name");
+
+fetch(`/api/${name}`)
+.then(res => res.json())
+.then(item => {
+    const tab = document.querySelector(".food_tab")
+    
+    tab.children[0].children[0].innerHTML = item[0].id;
+    tab.children[1].children[0].innerHTML = item[0].name;
+    tab.children[2].children[0].innerHTML = item[0].type;
+    tab.children[3].children[0].innerHTML = item[0].stock;
+})
+document.querySelector("#deletets").addEventListener("click", () => {
+    if (confirm("Are you sure?"))
+    {
+        fetch(`/delete/${name}`, {method:"delete"})
+        window.location.href = "/"
+    }
+})
+
+document.querySelector("#editts").addEventListener("click", () => {
+    window.location.href = `/edit.html?name=${name}`
+})    
+
+
+
+</script>
+</html>
