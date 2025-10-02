@@ -9,9 +9,15 @@ class ProductController extends Controller
 {
     public function index(Request $request){
         $currentPage = $request->get('page', 1);
+        $search = $request->get('search', null);
         $products = Product::all();
         $totalPage = ceil($products->count() / 5);
-        $products = Product::limit(5)->offset(($currentPage - 1) * 5)->get();
+
+        if($search){
+            $products = Product::where('nama', 'like', '%'.$search.'%')->limit(5)->offset(($currentPage - 1) * 5)->get();
+        }else{
+            $products = Product::limit(5)->offset(($currentPage - 1) * 5)->get();
+        }
         return view('product', compact('products', 'currentPage', 'totalPage'));
     }
 

@@ -9,8 +9,13 @@
             <h1>Tambahkan Produk</h1>
         </a>
     </nav>
-    <div class="wrapper-data">
+    <div class="wrapper-data wrapper-search-engine">
         <h2>Total Produk: {{ count($products) }}</h2>
+        <form class="wrapper-search">
+            {{-- <label for="search">Temukan: </label> --}}
+            <input type="text" name="search" id="search" placeholder="Cari Nama Produk disini">
+            <button type="submit">Cari Produk</button>
+        </form>
     </div>
     <main>
         <div class="right">

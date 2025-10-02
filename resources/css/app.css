@@ -157,3 +157,24 @@ form button:active {
   width: 25px;
   height: 25px;
 }
+
+.wrapper-search-engine{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.wrapper-search-engine .wrapper-search label{
+  font-size: 20px;
+}
+
+.wrapper-search-engine .wrapper-search input{
+  width: 250px;
+  min-height: 25px;
+  height: 100%;
+
+  padding: 5px;
+  outline: none;
+}
