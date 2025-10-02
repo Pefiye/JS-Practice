@@ -48,9 +48,9 @@ app.get("/api/:name", (req, res) => {
 })
 
 app.put("/update", (req, res) => {
-    const {nama, stok, tipe} = req.body
+    const {oldname, nama, stok, tipe} = req.body
 
-    db.query("UPDATE `items` SET `name`=?,`type`=?,`stock`=? WHERE name=?", [nama, tipe, stok, nama], (err) => {
+    db.query("UPDATE `items` SET `name`=?,`type`=?,`stock`=? WHERE name=?", [nama, tipe, stok, oldname], (err) => {
         if (err){res.status(500).send({"message":`Error: ${err}`})}
     })
 })

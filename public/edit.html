@@ -48,12 +48,13 @@ fetch(`/api/${name}`)
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    var oldname = name
     var nama = e.target[0].value
     var stok = e.target[1].value
     var tipe = e.target[2].value
     if (confirm("Are you sure?"))
     {
-        fetch(`/update`, {method:"put", headers:{"Content-Type":"application/json"}, body:JSON.stringify({nama, stok, tipe})})
+        fetch(`/update`, {method:"put", headers:{"Content-Type":"application/json"}, body:JSON.stringify({oldname, nama, stok, tipe})})
         .then(res => console.log(res))
         window.location.href = "/"
     } 
