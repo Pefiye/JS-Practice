@@ -1,11 +1,122 @@
-@import 'tailwindcss';
-
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
-
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+* {
+  font-family: monospace;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
+
+::selection {
+  background-color: #fff;
+  color: #1e1e1e;
+}
+
+h1 {
+  color: #fff;
+}
+
+body {
+  background-color: #1e1e1e;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  color: #fff;
+  align-items: center;
+  display: flex;
+  padding: 0 20px;
+  outline: 2px solid #fff;
+  height: 10%;
+}
+
+main {
+  display: flex;
+  height: 90%;
+}
+
+form {
+  width: 25%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+  height: 100%;
+  border-right: 1px solid #fff;
+}
+form input {
+  background-color: #1e1e1e;
+  outline: 1px solid #fff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+}
+form select {
+  outline: 1px solid #fff;
+  padding: 10px;
+  background-color: #1e1e1e;
+  color: #fff;
+  border: none;
+}
+form option {
+  padding: 10px;
+  color: #fff;
+  background-color: #1e1e1e;
+}
+form button {
+  padding: 10px;
+  background-color: #1e1e1e;
+  border: none;
+  outline: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.1s;
+  width: max-content;
+}
+form button:hover {
+  background-color: #fff;
+  color: #1e1e1e;
+}
+form button:active {
+  scale: 0.95;
+}
+
+.right {
+  width: 75%;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.right .food_tab {
+  outline: 1px solid #fff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  width: max-content;
+  color: #fff;
+}
+.right .food_tab button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #1e1e1e;
+  border: none;
+  outline: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.1s;
+  width: max-content;
+}
+.right .food_tab button:hover {
+  background-color: #fff;
+  color: #1e1e1e;
+}
+.right .food_tab button:active {
+  scale: 0.95;
+}
+
+/*# sourceMappingURL=app.css.map */
