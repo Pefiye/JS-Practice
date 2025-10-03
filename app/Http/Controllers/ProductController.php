@@ -18,7 +18,7 @@ class ProductController extends Controller
         }else{
             $products = Product::limit(5)->offset(($currentPage - 1) * 5)->get();
         }
-        return view('product', compact('products', 'currentPage', 'totalPage'));
+        return view('product', compact('products', 'currentPage', 'totalPage', 'search'));
     }
 
     
