@@ -13,7 +13,7 @@
         <h2>Total Produk: {{ count($products) }}</h2>
         <form class="wrapper-search">
             {{-- <label for="search">Temukan: </label> --}}
-            <input type="text" name="search" id="search" placeholder="Cari Nama Produk disini" value="{{ old('search') ?? '' }}">
+            <input type="text" name="search" id="search" placeholder="Cari Nama Produk disini" value="{{ $search  ?? '' }}">
             <input type="hidden" name="page" id="page" value="{{ $currentPage ?? 1 }}" readonly>
             <button type="submit">Cari Produk</button>
         </form>
@@ -51,7 +51,7 @@
                     <div class="pagination">
                         @for ($index = 1; $index <= $totalPage; $index++)
                             <form>
-                                <input type="hidden" name="search" id="search" placeholder="Cari Nama Produk disini" value="{{ old('search') ?? '' }}">
+                                <input type="hidden" name="search" id="search" placeholder="Cari Nama Produk disini" value="{{ $search  ?? '' }}">
                                 <button class="{{ old('page') ??  $currentPage == $index ? "selected-number" : '' }}" type="submit" name="page"
                                     value="{{ $index }}">{{ $index }}</button>
                             </form>
